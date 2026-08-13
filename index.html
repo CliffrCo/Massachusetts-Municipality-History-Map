@@ -2,3 +2,32 @@
 <title>MMH Map</title>
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<!-- START OF LEAFLET -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Prevent favicon requests -->
+    <link rel="icon" href="data:,">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { height: 100vh; width: 100vw; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Initialize map
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://openstreetmap.org{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+    </script>
+</body>
+</html>
